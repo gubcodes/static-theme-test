@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <style>
+    body{font-family: monospace;}
+    .light{background-color: white; color: black; border-color: black;}
+    .light .opposite{background-color: black; color: white;}
+    .dark{background-color: black; color: white; border-color: white;}
+    .dark .opposite{background-color: white; color: black;}
+    .greenOnBlack{background-color: black; color: #42FF00; border-color: #42FF00;}
+    .greenOnBlack .opposite{background-color: #42FF00; color: black;}
+    .amberOnBlack{background-color: black; color: #EA8C00; border-color: #EA8C00;}
+    .amberOnBlack .opposite{background-color: #EA8C00; color: black; border-color: #EA8C00;}
+    .whiteOnBlue{background-color: #3C44FF; color: white; border-color: white;}
+    .whiteOnBlue .opposite{background-color: white; color: #3C44FF;}
+    .border{border: 1px solid;}
+  </style>
+</head>
+
+<body>
+
+  <script>
+    function changeTheme (value, reverse) {
+      localStorage.theme = value;
+      document.documentElement.removeAttribute('class');
+      document.documentElement.classList.add(value);
+    }
+  </script>
+  </head>
+
+  <body>
+    <button class="dark" onclick="changeTheme('dark')">dark</button>
+    <button class="light" onclick="changeTheme('light')">light</button>
+    <button class="greenOnBlack" onclick="changeTheme('greenOnBlack')">green on black</button>
+    <button class="amberOnBlack" onclick="changeTheme('amberOnBlack', 'blackOnAmber')">amber on black</button>
+    <button class="whiteOnBlue" onclick="changeTheme('whiteOnBlue')">white on blue</button>
+    <br />
+    <h1 class="border">TITLE</h1>
+    <br />
+    <h1 class="border opposite">TITLE OPPOSITE</h1>
+
+  </body>
+
+</html>
